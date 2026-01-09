@@ -1,11 +1,9 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BASE */
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: #ffffff;
@@ -17,7 +15,6 @@ body {
   position: relative;
 }
 
-/* LOGO DE FONDO (MEJORADO) */
 body::before {
   content: "";
   position: fixed;
@@ -26,13 +23,12 @@ body::before {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 360px auto;
-  opacity: 0.08;          /* más visible pero elegante */
+  opacity: 0.08;
   filter: grayscale(100%);
   pointer-events: none;
   z-index: -1;
 }
 
-/* HEADER */
 .header {
   display: flex;
   flex-direction: column;
@@ -41,15 +37,12 @@ body::before {
   gap: 1.2rem;
 }
 
-/* LOGO PRINCIPAL */
 .logo {
   max-width: 220px;
   width: 100%;
   height: auto;
-  object-fit: contain;
 }
 
-/* NAV */
 nav {
   display: flex;
   gap: 1rem;
@@ -62,7 +55,6 @@ nav {
   text-decoration: none;
   padding: 0.45rem 1rem;
   border-radius: 6px;
-  transition: background 0.2s ease;
 }
 
 .nav-btn:hover,
@@ -70,29 +62,11 @@ nav {
   background: #1f7a5a;
 }
 
-/* HERO */
 .hero {
   text-align: center;
   padding: 3rem 1.5rem;
 }
 
-.hero h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.zona {
-  color: #b0b0b0;
-  margin-bottom: 1rem;
-}
-
-.descripcion {
-  max-width: 620px;
-  margin: 0 auto 2rem;
-  line-height: 1.6;
-}
-
-/* BOTÓN */
 .btn {
   background: #1f7a5a;
   color: #ffffff;
@@ -101,7 +75,6 @@ nav {
   text-decoration: none;
 }
 
-/* CATÁLOGO */
 .catalogo {
   max-width: 1200px;
   margin: 3rem auto;
@@ -115,7 +88,6 @@ nav {
   background: rgba(20, 20, 20, 0.92);
   border-radius: 12px;
   overflow: hidden;
-  backdrop-filter: blur(2px);
 }
 
 .gorra img {
@@ -124,14 +96,12 @@ nav {
   object-fit: cover;
 }
 
-/* BOTONES DEL SCRIPT */
 .botones {
   padding: 0.9rem;
   text-align: center;
 }
 
 .btn-sm {
-  display: inline-block;
   background: #1f7a5a;
   color: #ffffff;
   padding: 0.55rem 1rem;
@@ -140,38 +110,6 @@ nav {
   font-size: 0.85rem;
 }
 
-/* BOTONES FLOTANTES */
-.float {
-  position: fixed;
-  right: 16px;
-  padding: 0.65rem 1.2rem;
-  border-radius: 30px;
-  color: #ffffff;
-  text-decoration: none;
-  z-index: 10;
-}
-
-.whatsapp {
-  bottom: 70px;
-  background: #25d366;
-}
-
-.mensaje {
-  bottom: 20px;
-  background: #128c7e;
-}
-
-/* RESPONSIVE */
-@media (max-width: 600px) {
-  body::before {
-    background-size: 260px auto;
-    opacity: 0.06;
-  }
-
-  .logo {
-    max-width: 180px;
-  }
-}
 .float {
   position: fixed;
   right: 16px;
@@ -179,7 +117,6 @@ nav {
   border-radius: 30px;
   color: #fff;
   text-decoration: none;
-  font-size: 0.9rem;
   z-index: 10;
 }
 
@@ -192,9 +129,4 @@ nav {
   bottom: 20px;
   background: #0084ff;
 }
-
-.float:hover {
-  opacity: 0.9;
-}
-
 

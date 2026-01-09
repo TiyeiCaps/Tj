@@ -1,7 +1,7 @@
 const catalogo = document.getElementById("catalogo");
-const TOTAL_GORRAS = 50; // pon un máximo alto sin miedo
+const TOTAL_GORRAS = 50;
 const WHATSAPP = "5216647594788";
-const BASE_URL = "https://tiyeicaps.netlify.app";
+const BASE_URL = "https://tiyeicaps.github.io/Tj";
 
 for (let i = 1; i <= TOTAL_GORRAS; i++) {
 
@@ -12,7 +12,6 @@ for (let i = 1; i <= TOTAL_GORRAS; i++) {
   img.src = `img/${i}.jpeg`;
   img.alt = `Gorra ${i}`;
 
-  // 👇 SI LA IMAGEN NO EXISTE → SE ELIMINA LA TARJETA
   img.onerror = () => {
     card.remove();
   };
