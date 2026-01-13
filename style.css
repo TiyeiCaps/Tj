@@ -1,60 +1,48 @@
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* BODY */
 body {
   font-family: Arial, Helvetica, sans-serif;
-  color: #ffffff;
+  color: #fff;
   min-height: 100vh;
-  overflow-x: hidden;
   background:
     radial-gradient(circle at center, rgba(31,122,90,0.15), rgba(15,15,15,0.95) 70%),
     #0f0f0f;
-  position: relative;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("img/logo.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 360px auto;
-  opacity: 0.08;
-  filter: grayscale(100%);
-  pointer-events: none;
-  z-index: -1;
-}
-
+/* HEADER */
 .header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2.5rem 1rem 1.5rem;
-  gap: 1.2rem;
+  padding: 2rem 1rem;
+  gap: 1rem;
 }
 
 .logo {
-  max-width: 220px;
-  width: 100%;
-  height: auto;
+  width: 220px;
+  max-width: 100%;
 }
 
-nav {
+/* NAV */
+.nav {
   display: flex;
-  gap: 1rem;
+  gap: 12px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .nav-btn {
-  color: #ffffff;
   text-decoration: none;
-  padding: 0.45rem 1rem;
+  color: #fff;
+  padding: 0.5rem 1.2rem;
   border-radius: 6px;
+  transition: background 0.3s;
 }
 
 .nav-btn:hover,
@@ -62,19 +50,42 @@ nav {
   background: #1f7a5a;
 }
 
+/* BOTÓN CATÁLOGO DESTACADO */
+.catalogo-btn {
+  border: 1px solid #1f7a5a;
+}
+
+/* HERO */
 .hero {
   text-align: center;
   padding: 3rem 1.5rem;
 }
 
-.btn {
-  background: #1f7a5a;
-  color: #ffffff;
-  padding: 0.85rem 1.8rem;
-  border-radius: 6px;
-  text-decoration: none;
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
+.zona {
+  opacity: 0.85;
+  margin-bottom: 1rem;
+}
+
+.descripcion {
+  margin-bottom: 2rem;
+  line-height: 1.5;
+}
+
+.btn-principal {
+  background: #1f7a5a;
+  color: #fff;
+  padding: 0.9rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* CATÁLOGO */
 .catalogo {
   max-width: 1200px;
   margin: 3rem auto;
@@ -85,7 +96,7 @@ nav {
 }
 
 .gorra {
-  background: rgba(20, 20, 20, 0.92);
+  background: rgba(20,20,20,0.95);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -97,23 +108,24 @@ nav {
 }
 
 .botones {
-  padding: 0.9rem;
+  padding: 1rem;
   text-align: center;
 }
 
 .btn-sm {
   background: #1f7a5a;
-  color: #ffffff;
-  padding: 0.55rem 1rem;
-  border-radius: 5px;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
 }
 
+/* BOTONES FLOTANTES */
 .float {
   position: fixed;
   right: 16px;
-  padding: 0.65rem 1.2rem;
+  padding: 0.7rem 1.3rem;
   border-radius: 30px;
   color: #fff;
   text-decoration: none;
@@ -130,3 +142,9 @@ nav {
   background: #0084ff;
 }
 
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+}

@@ -12,16 +12,12 @@ for (let i = 1; i <= TOTAL_GORRAS; i++) {
   img.src = `img/${i}.jpeg`;
   img.alt = `Gorra ${i}`;
 
-  img.onerror = () => {
-    card.remove();
-  };
+  img.onerror = () => card.remove();
 
   const botones = document.createElement("div");
   botones.className = "botones";
 
-  const mensaje =
-    `Me interesa esta gorra.\n` +
-    `Foto: ${BASE_URL}/img/${i}.jpeg`;
+  const mensaje = `Me interesa esta gorra:\n${BASE_URL}/img/${i}.jpeg`;
 
   const link = document.createElement("a");
   link.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
@@ -34,6 +30,3 @@ for (let i = 1; i <= TOTAL_GORRAS; i++) {
   card.appendChild(botones);
   catalogo.appendChild(card);
 }
-
-console.log("Catálogo cargado dinámicamente");
-
