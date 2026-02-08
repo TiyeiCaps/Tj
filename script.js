@@ -1,69 +1,71 @@
 const catalogo = document.getElementById("catalogo");
-if (!catalogo) return;
 
-const TOTAL = 50;
-const WHATSAPP = "5216647594788";
-const BASE_URL = "https://tiyeicaps.github.io/Tj";
+if (catalogo) {
 
-/* ========= TITULO $500 ========= */
-agregarTitulo("Gorras Full Exclusivas · $500 MXN");
+  const TOTAL = 50;
+  const WHATSAPP = "5216647594788";
+  const BASE_URL = "https://tiyeicaps.github.io/Tj";
 
-/* ========= GORRAS NUMÉRICAS ========= */
-for (let i = 1; i <= TOTAL; i++) {
-  cargarGorra(`${i}.jpg`, "$500 MXN");
-  cargarGorra(`${i}.jpeg`, "$500 MXN");
-}
+  /* ========= TITULO $500 ========= */
+  agregarTitulo("Gorras Full Exclusivas · $500 MXN");
 
-/* ========= TITULO $600 ========= */
-agregarTitulo("Gorras Full Exclusivas Gamuza y Piedrería · $600 MXN");
-
-/* ========= GORRAS CON LETRA ========= */
-["a", "b"].forEach(letra => {
+  /* ========= GORRAS NUMÉRICAS ========= */
   for (let i = 1; i <= TOTAL; i++) {
-    cargarGorra(`${letra}${i}.jpg`, "$600 MXN");
-    cargarGorra(`${letra}${i}.jpeg`, "$600 MXN");
+    cargarGorra(`${i}.jpg`, "$500 MXN");
+    cargarGorra(`${i}.jpeg`, "$500 MXN");
   }
-});
 
-/* ========= FUNCIONES ========= */
+  /* ========= TITULO $600 ========= */
+  agregarTitulo("Gorras Full Exclusivas Gamuza y Piedrería · $600 MXN");
 
-function agregarTitulo(texto) {
-  const h2 = document.createElement("h2");
-  h2.className = "titulo-seccion";
-  h2.textContent = texto;
-  catalogo.appendChild(h2);
-}
+  /* ========= GORRAS CON LETRA ========= */
+  ["a", "b"].forEach(letra => {
+    for (let i = 1; i <= TOTAL; i++) {
+      cargarGorra(`${letra}${i}.jpg`, "$600 MXN");
+      cargarGorra(`${letra}${i}.jpeg`, "$600 MXN");
+    }
+  });
 
-function cargarGorra(nombre, precio) {
-  const ruta = `img/${nombre}`;
+  /* ========= FUNCIONES ========= */
 
-  const card = document.createElement("div");
-  card.className = "gorra";
+  function agregarTitulo(texto) {
+    const h2 = document.createElement("h2");
+    h2.className = "titulo-seccion";
+    h2.textContent = texto;
+    catalogo.appendChild(h2);
+  }
 
-  const img = document.createElement("img");
-  img.src = ruta;
-  img.alt = "Gorra Tiyei Caps";
+  function cargarGorra(nombre, precio) {
+    const ruta = `img/${nombre}`;
 
-  img.onerror = () => card.remove();
+    const card = document.createElement("div");
+    card.className = "gorra";
 
-  const tag = document.createElement("span");
-  tag.className = "precio-tag";
-  tag.textContent = precio;
+    const img = document.createElement("img");
+    img.src = ruta;
+    img.alt = "Gorra Tiyei Caps";
 
-  const botones = document.createElement("div");
-  botones.className = "botones";
+    img.onerror = () => card.remove();
 
-  const mensaje = `Me interesa esta gorra (${precio}):\n${BASE_URL}/${ruta}`;
+    const tag = document.createElement("span");
+    tag.className = "precio-tag";
+    tag.textContent = precio;
 
-  const link = document.createElement("a");
-  link.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
-  link.target = "_blank";
-  link.className = "btn-sm";
-  link.textContent = "🧢 Pedir gorra";
+    const botones = document.createElement("div");
+    botones.className = "botones";
 
-  botones.appendChild(link);
-  card.appendChild(tag);
-  card.appendChild(img);
-  card.appendChild(botones);
-  catalogo.appendChild(card);
+    const mensaje = `Me interesa esta gorra (${precio}):\n${BASE_URL}/${ruta}`;
+
+    const link = document.createElement("a");
+    link.href = `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(mensaje)}`;
+    link.target = "_blank";
+    link.className = "btn-sm";
+    link.textContent = "🧢 Pedir gorra";
+
+    botones.appendChild(link);
+    card.appendChild(tag);
+    card.appendChild(img);
+    card.appendChild(botones);
+    catalogo.appendChild(card);
+  }
 }
